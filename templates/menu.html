@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Ласкаво просимо в піцерію</h3>
+<h2>Menu</h2>
+
+        <table>
+            <tr>
+                <th>Назва піци</th>
+                <th>Опис інгредієнтів</th>
+                <th>Ціна піци</th>
+            </tr>
+            {% for pizza in menu_shop %}
+                <tr>
+                    <td>{{ pizza.name }}</td>
+                    <td>{{ pizza.description }}</td>
+                    <td>{{ pizza.price }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+</body>
+</html>
