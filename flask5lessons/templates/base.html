@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+{% block nav %}
+Menu
+{% endblock nav %}
+
+{% block main %}
+This is main
+{% endblock main %}
+
+{% block footer %}
+Created in 2023
+{% endblock footer %}
+</body>
+</html>

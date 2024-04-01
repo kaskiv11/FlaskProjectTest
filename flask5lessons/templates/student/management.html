@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+{% extends "base.html" %}
+{% block main %}
+
+{% if iterable %}
+    <table>
+        {% for item in iterable %}
+        <tr>
+            <td>
+                 <a href="{{ url_for('students_get', id=item.id)}}">{{item}}</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% else %}
+        <h1> Відстуні елементи </h1>
+{% endif %}
+<form action="{{ url_for('student_management') }}" method="post">
+
+
+    <p>
+        <label for="surname">Surname</label>
+        <input name="surname" type="text">
+    </p>
+
+    <p>
+        <label for="name">Name</label>
+        <input name="name" type="text">
+    </p>
+
+    <p>
+        <label for="age">Age</label>
+        <input name="age" type="text">
+    </p>
+
+    <p>
+        <button type="submit">ADD</button>
+    </p>
+</form>
+{% endblock main %}
+</body>
+</html>
